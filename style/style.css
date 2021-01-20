@@ -85,16 +85,6 @@ img {
 .site-nav .site-nav-item:not(:last-child) {
   margin-right: 50px;
 }
-/* -----/header-components----- */
-/* ------site logo------ */
-.site-nav .site-nav-underline {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background-color: var(--hover-color);
-  border-radius: 2px;
-}
 
 .site-nav .site-nav-item {
   position: relative;
@@ -139,10 +129,21 @@ img {
   color: var(--hover-color);
 }
 
-.site-nav .link-visited {
+.site-nav .link-visited::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--hover-color);
+  border-radius: 2px;
   color: var(--hover-color);
 }
 
+.site-nav .link-visited {
+  color: var(--hover-color);
+}
 /* -----style contacts----- */
 .contacts-nav a {
   display: inline-flex;
@@ -290,6 +291,36 @@ img {
 .lessons-site {
   display: flex;
   justify-content: space-between;
+}
+
+.lessons-site .lessons-site-box {
+  position: relative;
+}
+
+.lessons-site .lessons-site-subbox {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  padding: 27px 0;
+  background: rgba(47, 48, 58, 0.8);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.lessons-site-box a {
+  display: block;
+}
+
+.lessons-site-subbox p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-white);
 }
 
 /* -----commands (команда)----- */
@@ -440,6 +471,7 @@ img {
   flex-wrap: wrap;
   margin: -15px;
 }
+
 .portfolio-list .portfolio-box-link {
   display: block;
 }
@@ -454,6 +486,7 @@ img {
   width: 370px;
   margin: 15px;
 }
+
 .portfolio-box-aside {
   padding: 20px 24px;
   border: 1px solid var(--portfolio-item-border-color);
@@ -468,6 +501,7 @@ img {
   letter-spacing: 0.06em;
   color: var(--title-color);
 }
+
 .portfolio .portfolio-list-text {
   margin-top: 0;
   margin-bottom: 0;
@@ -475,6 +509,33 @@ img {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--text-color);
+}
+
+.portfolio-list .portfolio-box-description {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  background: rgba(33, 150, 243, 0.9);
+  display: none;
+}
+
+.portfolio-box-link:hover .portfolio-box-description {
+  display: block;
+}
+
+.portfolio-list .portfolio-box-description p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+}
+
+.portfolio-description-hover {
+  position: relative;
 }
 /* ------------------------/PORTFOLIO------------------------------ */
 
