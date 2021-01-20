@@ -121,6 +121,7 @@ img {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  transition: 250ms;
 }
 
 .site-nav .link:hover,
@@ -414,6 +415,7 @@ img {
   border-radius: 50%;
   color: var(--icons-color);
   fill: currentColor;
+  transition: 250ms;
 }
 
 .commands-icon a:hover,
@@ -449,6 +451,7 @@ img {
   border-radius: 4px;
   color: var(--icons-color);
   fill: currentColor;
+  transition: 250ms;
 }
 
 .clients .clients-icon:hover,
@@ -489,6 +492,7 @@ img {
   cursor: pointer;
   color: var(--title-color);
   background-color: var(--commands-background-color);
+  transition: 250ms;
 }
 
 .portfolio .portfolio-btn:hover,
@@ -509,6 +513,7 @@ img {
 
 .portfolio-list .portfolio-box-link {
   display: block;
+  transition: 250ms;
 }
 
 .portfolio-list .portfolio-box-link:hover,
@@ -553,11 +558,12 @@ img {
   height: 100%;
   padding: 63px 24px;
   background: rgba(33, 150, 243, 0.9);
-  display: none;
+  transition: 250ms;
 }
 
-.portfolio-box-link:hover .portfolio-box-description {
-  display: block;
+.portfolio-box-link:hover .portfolio-box-description,
+.portfolio-box-link:focus .portfolio-box-description {
+  top: 0;
 }
 
 .portfolio-list .portfolio-box-description p {
@@ -571,7 +577,9 @@ img {
 
 .portfolio-description-hover {
   position: relative;
+  overflow: hidden;
 }
+
 /* ------------------------/PORTFOLIO------------------------------ */
 
 /* ----------------------------FOOTER---------------------------- */
@@ -599,7 +607,9 @@ img {
 
 .footer-contacts a {
   color: var(--footer-contacts-color);
+  transition: 250ms;
 }
+
 .footer-contacts a:hover,
 .footer-contacts a:focus,
 .footer-contacts a:visited {
