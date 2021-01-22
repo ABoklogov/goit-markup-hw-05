@@ -622,7 +622,13 @@ img {
   line-height: 1.19;
   letter-spacing: 0.03em;
 }
-
+.footer .logo {
+  font-family: var(--logo-faily);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
 .footer .address {
   margin-bottom: 9px;
   font-style: normal;
