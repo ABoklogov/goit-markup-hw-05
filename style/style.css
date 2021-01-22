@@ -22,6 +22,8 @@
   --icons-color: #afb1b8;
   --main-family: 'Roboto', sans-serif;
   --logo-faily: 'Raleway', sans-serif;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --header-border: #ececec;
 }
 /* -------------------------COMPONENTS------------------------- */
 body {
@@ -34,11 +36,13 @@ body {
   color: var(--text-color);
   background-color: var(--main-background-color);
 }
+
 .list-no-style {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 a {
   text-decoration: none;
 }
@@ -76,12 +80,15 @@ img {
 .header-main {
   display: flex;
 }
+
 .header-main {
   align-items: center;
 }
+
 .header-main .menu {
   align-items: center;
 }
+
 .site-nav .site-nav-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -103,60 +110,61 @@ img {
   color: var(--hover-color);
 }
 
+.header {
+  border-bottom: 1px solid var(--header-border);
+}
+
 /* ------site nav------*/
 .site-nav .link {
   display: block;
   color: var(--title-color);
 }
+
 .contacts-nav {
   display: flex;
   margin-left: auto;
 }
+
 .contacts-nav li:not(:last-child) {
   margin-right: 50px;
 }
+
 .site-nav .link,
 .contacts-nav a {
   padding: 32px 0;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition: 250ms;
+  transition: color 250ms var(--timing-function);
 }
 
 .site-nav .link:hover,
-.site-nav .link:active,
-.site-nav .link:focus {
+.site-nav .link:focus,
+.contacts-nav a:hover,
+.contacts-nav a:focus,
+.site-nav .link-visited {
   color: var(--hover-color);
 }
 
-.site-nav .link-visited::before {
+.site-nav .link-visited::after {
   content: '';
   display: block;
   position: absolute;
   bottom: 0;
+  left: 0;
+  transform: translate(0, 25%);
   width: 100%;
   height: 4px;
   background-color: var(--hover-color);
   border-radius: 2px;
-  color: var(--hover-color);
 }
 
-.site-nav .link-visited {
-  color: var(--hover-color);
-}
 /* -----style contacts----- */
 .contacts-nav a {
   display: inline-flex;
   align-items: center;
   color: var(--text-color);
   fill: currentColor;
-}
-
-.contacts-nav a:hover,
-.contacts-nav a:active,
-.contacts-nav a:focus {
-  color: var(--hover-color);
 }
 
 .contacts-icon {
@@ -415,14 +423,14 @@ img {
   border-radius: 50%;
   color: var(--icons-color);
   fill: currentColor;
-  transition: 250ms;
+  transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function);
 }
 
 .commands-icon a:hover,
-.commands-icon a:focus,
-.commands-icon a:active {
+.commands-icon a:focus {
   background-color: var(--hover-color);
-  fill: var(--color-white);
+  color: var(--color-white);
 }
 
 .commands-icon .icon-svg {
@@ -451,12 +459,12 @@ img {
   border-radius: 4px;
   color: var(--icons-color);
   fill: currentColor;
-  transition: 250ms;
+  transition: color 250ms var(--timing-function),
+    border-color 250ms var(--timing-function);
 }
 
 .clients .clients-icon:hover,
-.clients .clients-icon:focus,
-.clients .clients-icon:active {
+.clients .clients-icon:focus {
   color: var(--hover-color);
   border-color: var(--hover-color);
 }
@@ -492,15 +500,14 @@ img {
   cursor: pointer;
   color: var(--title-color);
   background-color: var(--commands-background-color);
-  transition: 250ms;
+  transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
 }
 
 .portfolio .portfolio-btn:hover,
-.portfolio .portfolio-btn:active,
 .portfolio .portfolio-btn:focus {
   background-color: var(--hover-color);
   color: var(--color-white);
-  border: var(--hover-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -513,7 +520,7 @@ img {
 
 .portfolio-list .portfolio-box-link {
   display: block;
-  transition: 250ms;
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .portfolio-list .portfolio-box-link:hover,
@@ -558,12 +565,12 @@ img {
   height: 100%;
   padding: 63px 24px;
   background: rgba(33, 150, 243, 0.9);
-  transition: 250ms;
+  transition: transform 250ms var(--timing-function);
 }
 
 .portfolio-box-link:hover .portfolio-box-description,
 .portfolio-box-link:focus .portfolio-box-description {
-  top: 0;
+  transform: translateY(-294px);
 }
 
 .portfolio-list .portfolio-box-description p {
@@ -607,12 +614,11 @@ img {
 
 .footer-contacts a {
   color: var(--footer-contacts-color);
-  transition: 250ms;
+  transition: color 250ms var(--timing-function);
 }
 
 .footer-contacts a:hover,
-.footer-contacts a:focus,
-.footer-contacts a:visited {
+.footer-contacts a:focus {
   color: var(--hover-color);
 }
 
