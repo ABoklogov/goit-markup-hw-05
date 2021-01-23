@@ -274,7 +274,7 @@ img {
   opacity: 0;
 }
 
-.modal button {
+.modal .modal-btn {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -284,6 +284,9 @@ img {
   cursor: pointer;
 }
 
+.modal .modal-btn:hover .icon-close {
+  fill: var(--hover-color);
+}
 /* -----преимущества----- */
 
 .advantages-item-box {
