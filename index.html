@@ -385,13 +385,36 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
+            <p>Оставьте свои данные, мы вам перезвоним</p>
+            <form class="js-speaker-form modal-form">
+                <label for="name">Имя</label> 
+                <input type="text" name="user-name" id="name">
+
+                <label for="tel">Телефон</label>
+                <input type="tel" name="tel" id="tel">
+
+                <label for="mail">Почта</label>
+                <input type="email" name="email" id="mail">
+
+                <button type="submit">Отправить</button>
+            </form>
             <button type="button" data-modal-close class="modal-btn">
                 <svg width="30" height="30" class="icon-close" aria-label="close">
                     <use href="./images/decoration/icons/symbol-defs.svg#icon-close"></use>
                 </svg>
-        </button>
+            </button>
         </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script>(() => {
+        document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+        e.preventDefault();
+        
+        new FormData(e.currentTarget).forEach((value, name) =>
+        console.log(`${name}: ${value}`),
+        );
+        });
+        })();
+    </script>
 </body>
 </html>
